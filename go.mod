@@ -1,4 +1,4 @@
-module log-portal-api
+module logportalapi
 
 go 1.21.5
 
