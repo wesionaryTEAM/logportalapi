@@ -1,4 +1,4 @@
-module logportalapi
+module github.com/wesionaryTEAM/logportalapi
 
 go 1.21.5
 
