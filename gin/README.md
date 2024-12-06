@@ -10,7 +10,7 @@ Setup log portal in wesionary clean architecture project
 package infrastructure
 
 import (
-	"github.com/wesionaryTEAM/logportalapi"
+	"github.com/wesionaryTEAM/logportalapi/gin"
 )
 
 func RegisterLogPortal(router Router) *logportalapi.SSEEvent {
@@ -44,7 +44,7 @@ import (
 
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/utils"
-	"github.com/wesionaryTEAM/logportalapi"
+	"github.com/wesionaryTEAM/logportalapi/gin"
 )
 
 type Writer interface {
