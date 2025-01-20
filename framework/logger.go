@@ -100,11 +100,15 @@ func newSugaredLogger(logger *zap.Logger) *Logger {
 }
 
 // GetGormLogger build gorm logger from zap logger (sub-logger)
-func (l *Logger) GetGormLogger() gormlogger.Interface {
+func (l *Logger) GetGormLogger(logportal *logw.Config) gormlogger.Interface {
 
 	logger := zapLogger.WithOptions(
 		zap.AddCaller(),
 		zap.AddCallerSkip(3),
+		zap.Hooks(func(entry zapcore.Entry) error {
+			logportal.Log(entry.Message)
+			return nil
+		}),
 	)
 
 	return &GormLogger{
